@@ -21,6 +21,10 @@ class App extends Component {
 
   setUser = user => this.setState({ user })
 
+  setUserId = id => this.setState({ id })
+
+  setUserToken = token => this.setState({ token })
+
   clearUser = () => this.setState({ user: null })
 
   deleteAlert = (id) => {
@@ -54,10 +58,10 @@ class App extends Component {
         ))}
         <main className="container">
           <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} setUserId={this.setUserId} setUserToken={this.setUserToken} />
           )} />
           <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} setUserId={this.setUserId} setUserToken={this.setUserToken} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
