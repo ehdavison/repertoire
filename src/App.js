@@ -11,6 +11,7 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import SongCreate from './components/songs/SongCreate'
 import SongIndex from './components/songs/SongIndex'
+import SongShow from './components/songs/SongShow'
 class App extends Component {
   constructor () {
     super()
@@ -73,8 +74,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/song-create' render={({ match }) => (
             <SongCreate msgAlert={this.msgAlert} match={match} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/songs' render={({ match }) => (
+          <AuthenticatedRoute user={user} exact path='/songs' render={({ match }) => (
             <SongIndex msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/songs/:id' render={({ match }) => (
+            <SongShow msgAlert={this.msgAlert} match={match} user={user} />
           )} />
         </main>
       </Fragment>

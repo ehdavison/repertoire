@@ -29,7 +29,6 @@ class SongIndex extends Component {
   }
   songJsx = 'Loading...'
   render () {
-    console.log('this.state.songs: ', this.state.songs)
     if (this.state.songs) {
       this.songJsx = this.state.songs.map(song => {
         return (<div key={song.id}>
