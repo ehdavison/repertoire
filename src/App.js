@@ -12,6 +12,7 @@ import ChangePassword from './components/ChangePassword/ChangePassword'
 import SongCreate from './components/songs/SongCreate'
 import SongIndex from './components/songs/SongIndex'
 import SongShow from './components/songs/SongShow'
+import SongEdit from './components/songs/SongEdit'
 class App extends Component {
   constructor () {
     super()
@@ -77,8 +78,11 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/songs' render={({ match }) => (
             <SongIndex msgAlert={this.msgAlert} match={match} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/songs/:id' render={({ match }) => (
+          <AuthenticatedRoute user={user} exact path='/songs/:id' render={({ match }) => (
             <SongShow msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/songs/:id/edit' render={({ match }) => (
+            <SongEdit msgAlert={this.msgAlert} match={match} user={user} />
           )} />
         </main>
       </Fragment>
