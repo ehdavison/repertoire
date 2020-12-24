@@ -9,7 +9,10 @@ import SignUp from './components/SignUp/SignUp'
 import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
-
+import SongCreate from './components/songs/SongCreate'
+import SongIndex from './components/songs/SongIndex'
+import SongShow from './components/songs/SongShow'
+import SongEdit from './components/songs/SongEdit'
 class App extends Component {
   constructor () {
     super()
@@ -20,6 +23,10 @@ class App extends Component {
   }
 
   setUser = user => this.setState({ user })
+
+  setUserId = id => this.setState({ id })
+
+  setUserToken = token => this.setState({ token })
 
   clearUser = () => this.setState({ user: null })
 
@@ -54,16 +61,28 @@ class App extends Component {
         ))}
         <main className="container">
           <Route path='/sign-up' render={() => (
-            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
+            <SignUp msgAlert={this.msgAlert} setUser={this.setUser} setUserId={this.setUserId} setUserToken={this.setUserToken} />
           )} />
           <Route path='/sign-in' render={() => (
-            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} />
+            <SignIn msgAlert={this.msgAlert} setUser={this.setUser} setUserId={this.setUserId} setUserToken={this.setUserToken} />
           )} />
           <AuthenticatedRoute user={user} path='/sign-out' render={() => (
             <SignOut msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/song-create' render={({ match }) => (
+            <SongCreate msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/songs' render={({ match }) => (
+            <SongIndex msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/songs/:id' render={({ match }) => (
+            <SongShow msgAlert={this.msgAlert} match={match} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/songs/:id/edit' render={({ match }) => (
+            <SongEdit msgAlert={this.msgAlert} match={match} user={user} />
           )} />
         </main>
       </Fragment>
