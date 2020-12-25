@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import ReactPlayer from 'react-player'
 
 class SongShow extends Component {
   constructor (props) {
@@ -41,6 +42,15 @@ class SongShow extends Component {
       .catch(console.error)
   }
 
+  editRoute = (event) => {
+    event.preventDefault()
+    window.location.href = `/songs/#/songs/${this.props.match.params.id}/edit`
+  }
+
+  indexRoute = (event) => {
+    event.preventDefault()
+    window.location.href = '/songs/#/songs/'
+  }
   render () {
     const { song, deleted } = this.state
 
@@ -58,13 +68,17 @@ class SongShow extends Component {
       <div>
         <h4>{this.state.song.title}</h4>
         <p>By: {this.state.song.artist}</p>
-        <p>{this.state.song.video}</p>
-        <p>{this.state.song.tabs}</p>
+        <div className="video">
+          <ReactPlayer
+            url={this.state.song.video}
+          />
+        </div>
+        <a href={this.state.song.tabs} target="_blank" rel="noopener noreferrer">{this.state.song.tabs}</a>
         <p>{this.state.song.notes}</p>
         <button onClick={this.deleteSong}>Delete Song</button>
-        <Link to={`/songs/${this.props.match.params.id}/edit`}>Edit
-        </Link>
-        <Link to='/songs'>Repertoire</Link>
+        <button onClick={this.editRoute}>Edit
+        </button>
+        <button onClick={this.indexRoute}>Repertoire</button>
       </div>
     )
   }
