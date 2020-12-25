@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../AutoDismissAlert/messages'
@@ -93,6 +93,7 @@ class SignUp extends Component {
             >
               Submit
             </Button>
+            <Link to="/">Already have an account? Sign in!</Link>
           </Form>
         </div>
       </div>

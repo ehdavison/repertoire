@@ -1,1 +1,19 @@
 @import '~bootstrap/scss/bootstrap';
+
+.song_show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_show {
+    margin: 0px auto;
+    padding: 10px;
+    width: fit-content;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 5px;
+    margin: 10px;
+}

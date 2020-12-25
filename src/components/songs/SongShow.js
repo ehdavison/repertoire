@@ -65,19 +65,24 @@ class SongShow extends Component {
     }
 
     return (
-      <div>
-        <h4>{this.state.song.title}</h4>
-        <p>By: {this.state.song.artist}</p>
-        <div className="video">
+      <div className="song_show">
+        <div className="title_show">
+          <h1>{this.state.song.title}</h1>
+          <h2>By: {this.state.song.artist}</h2>
+        </div>
+        <div className="video_container">
           <ReactPlayer
+            className="video"
             url={this.state.song.video}
           />
         </div>
         <a href={this.state.song.tabs} target="_blank" rel="noopener noreferrer">{this.state.song.tabs}</a>
         <p>{this.state.song.notes}</p>
-        <button onClick={this.deleteSong}>Delete Song</button>
-        <button onClick={this.editRoute}>Edit
-        </button>
+        <div className="show_routes">
+          <button onClick={this.deleteSong}>Delete Song</button>
+          <button onClick={this.editRoute}>Edit
+          </button>
+        </div>
         <button onClick={this.indexRoute}>Repertoire</button>
       </div>
     )
