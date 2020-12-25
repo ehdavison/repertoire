@@ -70,20 +70,19 @@ class SongShow extends Component {
           <h1>{this.state.song.title}</h1>
           <h2>By: {this.state.song.artist}</h2>
         </div>
+        <div className="show_routes">
+          <button className="show_routes_button" onClick={this.deleteSong}>Delete Song</button>
+          <button className="show_routes_button" onClick={this.editRoute}>Edit
+          </button>
+        </div>
         <div className="video_container">
           <ReactPlayer
             className="video"
             url={this.state.song.video}
           />
         </div>
-        <a href={this.state.song.tabs} target="_blank" rel="noopener noreferrer">{this.state.song.tabs}</a>
+        <a className="show_tabs" href={this.state.song.tabs} target="_blank" rel="noopener noreferrer">Link to tabs/sheets</a>
         <p>{this.state.song.notes}</p>
-        <div className="show_routes">
-          <button onClick={this.deleteSong}>Delete Song</button>
-          <button onClick={this.editRoute}>Edit
-          </button>
-        </div>
-        <button onClick={this.indexRoute}>Repertoire</button>
       </div>
     )
   }

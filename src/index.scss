@@ -1,4 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+body {
+    font-family: 'Comfortaa', cursive;
+    background-color: #d7b9df;
+}
+
+.nav {
+    background: #311D3F;
+}
 
 .song_show {
     display: flex;
@@ -8,12 +18,106 @@
 }
 
 .title_show {
+    color: #311D3F;
     margin: 0px auto;
     padding: 10px;
     width: fit-content;
     border-width: 5px;
     border-style: solid;
-    border-color: black;
+    border-color: #311D3F;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.show_routes {
+    margin: 0px auto;
+    padding: 10px;
+    width: fit-content;
+    margin: 10px;
+}
+
+.show_routes_button {
+    background-color: #522546;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.7s;
+}
+
+.show_routes_button:hover {
+    background-color: #88304E;
+}
+
+.show_tabs {
+    padding: 10px;
+    width: fit-content;
     border-radius: 5px;
     margin: 10px;
+    color: white;
+    background: #88304E;
+    transition-duration: 0.7s;
+}
+
+.show_tabs:hover {
+    background: #E23E57;
+    color: #311D3F;
+    text-decoration: none;
+}
+
+.create_route {
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    background: #88304E;
+    transition-duration: 0.7s;
+}
+
+.create_route:hover {
+    background: #E23E57;
+    color: #311D3F;
+    text-decoration: none;
+}
+
+.index_container {
+    background-color: #522546;
+    color: #311D3F;
+    margin: 0px auto;
+    padding: 10px;
+    width: fit-content;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #311D3F;
+    border-radius: 15px;
+    margin: 10px;
+    transition-duration: 1s;
+}
+
+.index_container:hover {
+    border-color:#d7b9df;
+    background: #88304E;
+    color: #311D3F;
+}
+
+.index_link {
+    color: white;
+    transition-duration: 1s;
+}
+
+.index_link:hover {
+    text-decoration: none;
+    color:#d7b9df;
+}
+
+.index_format {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -9,7 +9,8 @@ class SongIndex extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      songs: null
+      songs: null,
+      clicked: false
     }
   }
 
@@ -28,11 +29,12 @@ class SongIndex extends Component {
       .catch(console.error)
   }
   songJsx = 'Loading...'
+
   render () {
     if (this.state.songs) {
       this.songJsx = this.state.songs.map(song => {
-        return (<div key={song.id}>
-          <Link to={'/songs/' + song.id}>
+        return (<div className = "index_container" key={song.id}>
+          <Link className="index_link" to={'/songs/' + song.id}>
             <h3>{song.title}</h3>
             <p>{song.artist}</p>
           </Link>
@@ -40,8 +42,9 @@ class SongIndex extends Component {
       })
       console.log('songJsx is: ', this.songJsx)
       return (
-        <div>
-          <h1>Your Repertoire</h1>
+        <div className="index_format">
+          <h1 className="index_message">Your Repertoire</h1>
+          <Link className="create_route" to={'/song-create'}>Add a Song</Link>
           {this.songJsx}
         </div>
       )
@@ -50,6 +53,7 @@ class SongIndex extends Component {
       return (
         <div>
           <h1>Your Repertoire</h1>
+          <Link to={'/song-create'}>Add a Song</Link>
           {this.songJsx}
         </div>
       )

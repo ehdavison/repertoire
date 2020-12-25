@@ -27,7 +27,7 @@ const unauthenticatedOptions = (
 // )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar className="nav" variant="dark" expand="md">
     <Navbar.Brand href="#songs">
       repertoire
     </Navbar.Brand>
