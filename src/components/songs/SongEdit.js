@@ -36,14 +36,10 @@ class SongEdit extends Component {
 
     const editedSong = Object.assign(this.state.song, updatedField)
     this.setState({ song: editedSong })
-    console.log('event.target.value is: ', event.target.value)
-    console.log('event.target.name is: ', event.target.name)
   }
 
   handleSubmit = event => {
-    console.log('this.state.song is: ', this.state.song)
     event.preventDefault()
-    console.log('user token is: ', this.props.user.token)
     axios({
       method: 'PATCH',
       url: apiUrl + '/songs/' + this.props.match.params.id + '/',

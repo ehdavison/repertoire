@@ -32,7 +32,6 @@ class SongCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    console.log('this is the song: ', this.state.song)
     axios({
       method: 'POST',
       url: apiUrl + '/songs/',
@@ -48,7 +47,6 @@ class SongCreate extends Component {
   }
 
   render () {
-    console.log(this.props)
     if (this.state.createdId) {
       return <Redirect to={`/songs/${this.state.createdId}`}/>
     }

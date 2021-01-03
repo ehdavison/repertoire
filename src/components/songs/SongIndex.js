@@ -23,7 +23,6 @@ class SongIndex extends Component {
       }
     })
       .then(response => {
-        console.log('response is: ', response)
         this.setState({ songs: response.data })
       })
       .catch(console.error)
@@ -33,14 +32,15 @@ class SongIndex extends Component {
   render () {
     if (this.state.songs) {
       this.songJsx = this.state.songs.map(song => {
-        return (<div className = "index_container" key={song.id}>
-          <Link className="index_link" to={'/songs/' + song.id}>
-            <h3>{song.title}</h3>
-            <p>{song.artist}</p>
-          </Link>
-        </div>)
+        if (this.props.user.id === song.owner) {
+          return (<div className = "index_container" key={song.id}>
+            <Link className="index_link" to={'/songs/' + song.id}>
+              <h3>{song.title}</h3>
+              <p>{song.artist}</p>
+            </Link>
+          </div>)
+        }
       })
-      console.log('songJsx is: ', this.songJsx)
       return (
         <div className="index_format">
           <h1 className="index_message">Your Repertoire</h1>

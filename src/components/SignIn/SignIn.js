@@ -28,7 +28,6 @@ class SignIn extends Component {
 
     signIn(this.state)
       .then((res) => {
-        console.log(res)
         setUser(res.data.user)
         setUserId(res.data.user.id)
         setUserToken(res.data.user.token)
