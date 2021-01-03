@@ -54,37 +54,6 @@ body {
     background-color: #88304E;
 }
 
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.auth-banner {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.sign-in-button {
-    background-color: #522546;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    padding: 10px 20px;
-    margin: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.7s;
-}
-
-.sign-in-button:hover {
-    background-color: #88304E;
-}
-
-
-
 .show_tabs {
     padding: 10px;
     width: fit-content;
@@ -102,6 +71,7 @@ body {
 }
 
 .create_route {
+    align-self: center;
     padding: 10px;
     width: fit-content;
     border-radius: 5px;
@@ -118,6 +88,7 @@ body {
 }
 
 .index_container {
+    align-self: center;
     background-color: #522546;
     color: #311D3F;
     margin: 0px auto;
@@ -151,6 +122,11 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.index_message {
+    margin: 20px;
+    align-self: center;
 }
 
 .create-container {
@@ -190,5 +166,34 @@ body {
 }
 
 .create-submit:hover {
+    background-color: #88304E;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-banner {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sign-in-button {
+    background-color: #522546;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.7s;
+}
+
+.sign-in-button:hover {
     background-color: #88304E;
 }
