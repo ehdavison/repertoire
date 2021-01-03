@@ -52,40 +52,45 @@ class SongCreate extends Component {
     }
     return (
       <div>
-        <h1>Song Create Page</h1>
+        <h1 className="create-banner">Add a song to your repertoire!</h1>
 
-        <form onSubmit={this.handleSubmit}>
+        <form className="create-container" onSubmit={this.handleSubmit}>
           <input
+            className="create-form"
             placeholder="Song Title Here"
             name="title"
             value={this.state.song.title}
             onChange={this.handleInputChange}
           />
           <input
+            className="create-form"
             placeholder="Song Artist Here"
             name="artist"
             value={this.state.song.artist}
             onChange={this.handleInputChange}
           />
           <input
+            className="create-form"
             placeholder="Video Link Here"
             name="video"
             value={this.state.song.video}
             onChange={this.handleInputChange}
           />
           <input
+            className="create-form"
             placeholder="Tabs/Sheet Music Here"
             name="tabs"
             value={this.state.song.tabs}
             onChange={this.handleInputChange}
           />
           <input
+            className="create-form"
             placeholder="Notes"
             name="notes"
             value={this.state.song.notes}
             onChange={this.handleInputChange}
           />
-          <button type="submit">Add a Song</button>
+          <button className="create-submit" type="submit">Add a Song</button>
         </form>
       </div>
     )

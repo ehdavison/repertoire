@@ -7,11 +7,11 @@ const authenticatedOptions = (
   <Fragment>
     {/* <Nav.Link href="#change-password">Change Password</Nav.Link> */}
     {/* <Nav.Link href="#sign-out">Sign Out</Nav.Link> */}
-    <Nav.Link href="#song-create">Create Song</Nav.Link>
     <NavDropdown title="Account" id="basic-nav-dropdown">
       <NavDropdown.Item href="#sign-out">Sign Out</NavDropdown.Item>
       <NavDropdown.Item href="#change-password">Change Password</NavDropdown.Item>
     </NavDropdown>
+    <Nav.Link href="#song-create">Create Song</Nav.Link>
   </Fragment>
 )
 
